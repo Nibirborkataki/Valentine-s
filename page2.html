@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="background-animation">
+            <div class="frame">
+            </div>
+            <h1>Happy <span>Valentine's</span> Day❤️</h1>
+            <h4>to the one who fills my heart with joy and my life with love.<br> You mean everything to me. I love you endlessly.</h4>
+            <h3>Will you be <span>Valentine???</span></h3>
+            <div class="btn">
+                <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+
+    <audio id="yesAudio" src="main.mp3"></audio>
+    <audio id="noAudio" src="plors.mp3"></audio>
+            </div>
+        </div>
+    </div>
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const yesAudio = document.getElementById('yesAudio');
+        const noAudio = document.getElementById('noAudio');
+
+        // Add click event listeners to the buttons
+        yesButton.addEventListener('click', function() {
+            // Pause the "No" song if it's playing
+            noAudio.pause();
+            // Play the "Yes" song
+            yesAudio.currentTime = 0; // Start from the beginning
+            yesAudio.play();
+        });
+
+        noButton.addEventListener('click', function() {
+            // Pause the "Yes" song if it's playing
+            yesAudio.pause();
+            // Play the "No" song
+            noAudio.currentTime = 0; // Start from the beginning
+            noAudio.play();
+        });
+    </script>
+</body>
+</html>
